@@ -6,7 +6,7 @@
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:24:59 by tfockede          #+#    #+#             */
-/*   Updated: 2023/02/14 18:03:32 by tfockede         ###   ########.fr       */
+/*   Updated: 2023/02/15 09:59:51 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_print_abc(char a, char b, char c)
 	write(1, &a, 1);
 	write(1, &b, 1);
 	write(1, &c, 1);
-	if (a != 55)
+	if (a != '7')
 		write(1, ", ", 2);
 }
 
@@ -27,21 +27,18 @@ void	ft_print_comb(void)
 	char	b;
 	char	c;
 
-	a = 0;
-	while (a <= 7)
+	a = -1;
+	while (++a <= 7)
 	{
-		b = a + 1;
-		while (b <= 8)
+		b = a;
+		while (++b <= 8)
 		{
-			c = b + 1;
-			while (c <= 9)
+			c = b;
+			while (++c <= 9)
 			{
-				ft_print_abc(a + 48, b + 48, c + 48);
-				c++;
+				ft_print_abc(a + '0', b + '0', c + '0');
 			}
-			b++;
 		}
-		a++;
 	}
 }
 
