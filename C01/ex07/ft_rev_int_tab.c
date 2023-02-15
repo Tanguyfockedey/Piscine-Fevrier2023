@@ -6,21 +6,21 @@
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:34:08 by tfockede          #+#    #+#             */
-/*   Updated: 2023/02/15 12:58:47 by tfockede         ###   ########.fr       */
+/*   Updated: 2023/02/15 14:40:56 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_rev_int_tab(int *tab, int size)
 {
-	int t;
-	int i;
+	int	swap;
+	int	i;
 
 	i = 0;
 	while (i < size / 2)
 	{
-		t = tab[i];
-		tab[i] = tab[size - 1 - i];
-		tab[size - 1 - i] = t;
+		swap = tab[i];
+		tab[i] = tab[size - i - 1];
+		tab[size - i - 1] = swap;
 		i++;
 	}
 }
