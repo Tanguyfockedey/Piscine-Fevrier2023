@@ -1,40 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 17:42:09 by tfockede          #+#    #+#             */
-/*   Updated: 2023/02/16 15:01:55 by tfockede         ###   ########.fr       */
+/*   Created: 2023/02/16 13:26:28 by tfockede          #+#    #+#             */
+/*   Updated: 2023/02/16 15:02:22 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
+#include <unistd.h>
+
+void	ft_putchar(char c)
 {
-	int	i;
+	write(1, &c, 1);
+}
+
+void	ft_putstr_non_printable(char *str)
+{
+	int		i;
+	int		j;
 
 	if (!str)
-		return (0);
+		return ;
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] < 'A' || (str[i] > 'Z' && str[i] < 'a') || str[i] > 'z')
-			return (0);
+		if (str[i] < ' ' || str[i] > '~')
+		{
+			ft_putchar('\\');
+			ft_putchar(str[i] / 16 + '0');
+			j = str[i] % 16;
+			if (j < 10)
+				ft_putchar(j + '0');
+			else
+				ft_putchar(j - 10 + 'a');
+		}
+		else
+			ft_putchar(str[i]);
 		i++;
 	}
-	return (1);
 }
 
 /*
-#include <stdio.h>
 int	main(void)
 {
-	char	*str = 0;
-	int	i;
+	char	*str = "Hello, \n this \t is \v a string";
 
-	i = 2;
-	i = ft_str_is_alpha(str);
-	printf("%d\n", i);
+	ft_putstr_non_printable(str);
 }
 */

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 17:42:09 by tfockede          #+#    #+#             */
-/*   Updated: 2023/02/16 15:01:55 by tfockede         ###   ########.fr       */
+/*   Created: 2023/02/16 13:01:08 by tfockede          #+#    #+#             */
+/*   Updated: 2023/02/16 15:02:14 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
+char	*ft_strcapitalize(char *str)
 {
 	int	i;
 
@@ -19,22 +19,27 @@ int	ft_str_is_alpha(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] < 'A' || (str[i] > 'Z' && str[i] < 'a') || str[i] > 'z')
-			return (0);
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
+		if (i == 0 || str[i - 1] < '0' || (str[i - 1] > '9' && str[i - 1] < 'A')
+			|| (str[i - 1] > 'Z' && str[i - 1] < 'a') || str[i - 1] > 'z')
+		{
+			if (str[i] >= 'a' && str[i] <= 'z')
+				str[i] -= 32;
+		}
 		i++;
 	}
-	return (1);
+	return (str);
 }
 
 /*
 #include <stdio.h>
 int	main(void)
 {
-	char	*str = 0;
-	int	i;
+	char	str[] = ".salut, 42MOTS quaranTe-deux|cinquante+et~un";
 
-	i = 2;
-	i = ft_str_is_alpha(str);
-	printf("%d\n", i);
+	printf("%s\n", str);
+	ft_strcapitalize(str);
+	printf("%s\n", str);
 }
 */

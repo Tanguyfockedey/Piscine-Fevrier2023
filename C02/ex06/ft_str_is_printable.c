@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 17:42:09 by tfockede          #+#    #+#             */
-/*   Updated: 2023/02/16 15:01:55 by tfockede         ###   ########.fr       */
+/*   Created: 2023/02/16 12:37:47 by tfockede          #+#    #+#             */
+/*   Updated: 2023/02/16 15:02:07 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
+int	ft_str_is_printable(char *str)
 {
 	int	i;
 
@@ -19,7 +19,7 @@ int	ft_str_is_alpha(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] < 'A' || (str[i] > 'Z' && str[i] < 'a') || str[i] > 'z')
+		if (str[i] < ' ' || str[i] > '~')
 			return (0);
 		i++;
 	}
@@ -30,11 +30,11 @@ int	ft_str_is_alpha(char *str)
 #include <stdio.h>
 int	main(void)
 {
-	char	*str = 0;
+	char	str[] = "123";
 	int	i;
 
 	i = 2;
-	i = ft_str_is_alpha(str);
+	i = ft_str_is_printable(str);
 	printf("%d\n", i);
 }
 */

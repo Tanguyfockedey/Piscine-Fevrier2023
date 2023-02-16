@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 17:42:09 by tfockede          #+#    #+#             */
-/*   Updated: 2023/02/16 15:01:55 by tfockede         ###   ########.fr       */
+/*   Created: 2023/02/16 12:57:44 by tfockede          #+#    #+#             */
+/*   Updated: 2023/02/16 15:02:12 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
+char	*ft_strlowcase(char *str)
 {
 	int	i;
 
@@ -19,22 +19,21 @@ int	ft_str_is_alpha(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] < 'A' || (str[i] > 'Z' && str[i] < 'a') || str[i] > 'z')
-			return (0);
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] = str[i] + 32;
 		i++;
 	}
-	return (1);
+	return (str);
 }
 
 /*
 #include <stdio.h>
 int	main(void)
 {
-	char	*str = 0;
-	int	i;
+	char	str[] = "123 ABC zZz";
 
-	i = 2;
-	i = ft_str_is_alpha(str);
-	printf("%d\n", i);
+	printf("%s\n", str);
+	ft_strlowcase(str);
+	printf("%s\n", str);
 }
 */
