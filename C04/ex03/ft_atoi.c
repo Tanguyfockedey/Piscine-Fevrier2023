@@ -6,7 +6,7 @@
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 19:45:22 by tfockede          #+#    #+#             */
-/*   Updated: 2023/02/16 20:14:25 by tfockede         ###   ########.fr       */
+/*   Updated: 2023/02/18 11:56:31 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_atoi(char *str)
 	return (sign * unb);
 }
 
-
+/* 
 #include <stdio.h>
 int	main(void)
 {
@@ -56,3 +56,4 @@ int	main(void)
 
 	printf("%s\n%d\n", str, ft_atoi(str));
 }
+ */

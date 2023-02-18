@@ -6,7 +6,7 @@
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 19:17:11 by tfockede          #+#    #+#             */
-/*   Updated: 2023/02/16 19:17:57 by tfockede         ###   ########.fr       */
+/*   Updated: 2023/02/18 13:51:14 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-/*
+/* 
 #include <stdio.h>
 int	main(void)
 {
-	char	str[] = "Test string is 33 characters long";
+	char	str[] = "This is a test string";
 	int x;
 
 	x = ft_strlen(str);
 	printf("Test string is %d characters long\n", x);
 }
-*/
+ */
