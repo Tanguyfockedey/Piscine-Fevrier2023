@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
+/*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:12:47 by tfockede          #+#    #+#             */
-/*   Updated: 2023/02/18 14:56:22 by tfockede         ###   ########.fr       */
+/*   Updated: 2023/02/19 12:47:32 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,10 @@ int	main(void)
 	int nb 		= 5;
 	int power = -2;
 
-	while (power <= 5)
+	while (power <= 100000)
 	{
-		printf("%d ^ %d = %d\n", nb, power, ft_iterative_power(nb, power));
+		ft_iterative_power(nb, power);
+	//	printf("%d ^ %d = %d\n", nb, power, ft_iterative_power(nb, power));
 		power++;
 	}
 }

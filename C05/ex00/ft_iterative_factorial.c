@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
+/*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:04:15 by tfockede          #+#    #+#             */
-/*   Updated: 2023/02/18 14:06:47 by tfockede         ###   ########.fr       */
+/*   Updated: 2023/02/19 12:47:52 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
