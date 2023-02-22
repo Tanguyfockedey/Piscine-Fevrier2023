@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 14:59:00 by tafocked          #+#    #+#             */
-/*   Updated: 2023/02/22 13:43:35 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/02/22 13:42:21 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,15 @@ int	ft_count_substr(char *str, char *charset)
 
 	i = 0;
 	substr_count = 0;
+	while (!ft_in_charset(str[i], charset) && str[i])
+		i++;
 	while (ft_in_charset(str[i], charset) && str[i])
 		i++;
 	while (str[i])
 	{
 		while (!ft_in_charset(str[i], charset) && str[i])
 			i++;
-		if (ft_in_charset(str[i], charset) || !str[i])
+		if (ft_in_charset(str[i], charset))
 			substr_count += 1;
 		while (ft_in_charset(str[i], charset) && str[i])
 			i++;
@@ -55,7 +57,7 @@ char	*ft_create_substr(char *str, char *charset, char **newstr)
 	i = 0;
 	while (ft_in_charset(str[0], charset))
 		str++;
-	while (!ft_in_charset(str[i], charset) && str[i])
+	while (!ft_in_charset(str[i], charset))
 		i++;
 	newstr[0] = malloc((i + 1) * sizeof(char));
 	if (!(newstr[0]))
@@ -83,6 +85,8 @@ char	**ft_split(char *str, char *charset)
 	if (!tab)
 		return (0);
 	tab[substr_count] = 0;
+	while (!ft_in_charset(str[0], charset) && str[0])
+		str++;
 	i = 0;
 	while (i < substr_count)
 	{
@@ -97,12 +101,12 @@ char	**ft_split(char *str, char *charset)
 	return (tab);
 }
 
-/* 
+
 int	main(void)
 {
-	//This version considers the start and end as separators
-	char *str = "this is a number 3 but this isn't .";
-	char *sep = "123";
+	//This version considers the start and end not as separators
+	char *str = " this is a test";
+	char *sep = " ";
 	char **tab;
 	int i = 0;
 
@@ -121,6 +125,5 @@ int	main(void)
 //	printf("\n%s\t%s", tab[0], tab[1]);
 //	free(tab[0]);
 //	free(tab[1]);
-	printf("%p", tab[i]);
 	free(tab);
-} */
+}
