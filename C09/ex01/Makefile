@@ -6,7 +6,7 @@
 #    By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 14:05:26 by tafocked          #+#    #+#              #
-#    Updated: 2023/02/23 15:55:46 by tafocked         ###   ########.fr        #
+#    Updated: 2023/02/23 18:07:15 by tafocked         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(NAME): $(OBJ)
 re: fclean all
 
 clean:
-	rm -f srcs/*.o
+	rm -f $(OBJ)
 	
 fclean: clean
 	rm -f $(NAME)
