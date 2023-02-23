@@ -6,12 +6,11 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 14:59:00 by tafocked          #+#    #+#             */
-/*   Updated: 2023/02/22 13:43:35 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:06:09 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int	ft_in_charset(char c, char *charset)
 {
@@ -59,7 +58,7 @@ char	*ft_create_substr(char *str, char *charset, char **newstr)
 		i++;
 	newstr[0] = malloc((i + 1) * sizeof(char));
 	if (!(newstr[0]))
-		return (0);
+		return (&str[i]);
 	j = -1;
 	while (++j < i)
 	{
@@ -78,7 +77,6 @@ char	**ft_split(char *str, char *charset)
 	if (!str || !charset)
 		return (0);
 	substr_count = ft_count_substr(str, charset);
-	printf("substr count = %d\n", substr_count);		//
 	tab = malloc((substr_count + 1) * sizeof(char *));
 	if (!tab)
 		return (0);
@@ -88,21 +86,19 @@ char	**ft_split(char *str, char *charset)
 	{
 		str = ft_create_substr(str, charset, &tab[i]);
 		if (!tab[i])
-		{
-			while (--i >= 0)
-				free(tab[i]);
-		}
+			return (tab);
 		i++;
 	}
 	return (tab);
 }
 
 /* 
+#include <stdio.h>
 int	main(void)
 {
 	//This version considers the start and end as separators
-	char *str = "this is a number 3 but this isn't .";
-	char *sep = "123";
+	char *str = " this is a...string";
+	char *sep = " .";
 	char **tab;
 	int i = 0;
 
@@ -121,6 +117,6 @@ int	main(void)
 //	printf("\n%s\t%s", tab[0], tab[1]);
 //	free(tab[0]);
 //	free(tab[1]);
-	printf("%p", tab[i]);
+//	printf("%p", tab[i]);
 	free(tab);
 } */

@@ -6,12 +6,11 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 14:59:00 by tafocked          #+#    #+#             */
-/*   Updated: 2023/02/22 13:42:21 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:01:42 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int	ft_in_charset(char c, char *charset)
 {
@@ -80,7 +79,6 @@ char	**ft_split(char *str, char *charset)
 	if (!str || !charset)
 		return (0);
 	substr_count = ft_count_substr(str, charset);
-	printf("substr count = %d\n", substr_count);		//
 	tab = malloc((substr_count + 1) * sizeof(char *));
 	if (!tab)
 		return (0);
@@ -92,16 +90,13 @@ char	**ft_split(char *str, char *charset)
 	{
 		str = ft_create_substr(str, charset, &tab[i]);
 		if (!tab[i])
-		{
-			while (--i >= 0)
-				free(tab[i]);
-		}
+			return (tab);
 		i++;
 	}
 	return (tab);
 }
 
-
+/* 
 int	main(void)
 {
 	//This version considers the start and end not as separators
@@ -126,4 +121,4 @@ int	main(void)
 //	free(tab[0]);
 //	free(tab[1]);
 	free(tab);
-}
+} */
