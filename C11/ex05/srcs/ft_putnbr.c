@@ -1,36 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_foreach.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 18:26:58 by tafocked          #+#    #+#             */
-/*   Updated: 2023/02/25 12:57:13 by tafocked         ###   ########.fr       */
+/*   Created: 2023/02/16 19:20:59 by tfockede          #+#    #+#             */
+/*   Updated: 2023/02/25 15:06:49 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_foreach(int *tab, int length, void (*f)(int))
-{
-	int	i;
+#include "../includes/ft.h"
 
-	i = -1;
-	while (++i < length)
-		(*f)(tab[i]);
+void	ft_putnbr(int nb)
+{
+	unsigned int	unb;
+	char			c;
+
+	if (nb < 0)
+		write(1, "-", 1);
+	if (nb < 0)
+		unb = -nb;
+	else
+		unb = nb;
+	if (unb > 9)
+	{
+		ft_putnbr(unb / 10);
+		unb %= 10;
+	}
+	c = unb + '0';
+	write(1, &c, 1);
 }
 
 /* 
-#include <stdio.h>
-void	ft_mult(int i)
-{
-	printf("%d\n", i * 2);
-}
-
 int	main(void)
 {
-	int tab[] = { 1, 2, 3, 4, 5};
-	void (*f)(int) = &ft_mult;
+	int i = -10;
+	unsigned int u;
 
-	ft_foreach(tab, 5, *f);
+	u = i;
+	ft_putnbr(-2147483648);
 }
  */

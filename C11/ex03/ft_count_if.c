@@ -1,36 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_foreach.c                                       :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 18:26:58 by tafocked          #+#    #+#             */
-/*   Updated: 2023/02/25 12:57:13 by tafocked         ###   ########.fr       */
+/*   Created: 2023/02/25 12:11:29 by tafocked          #+#    #+#             */
+/*   Updated: 2023/02/25 12:57:45 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_foreach(int *tab, int length, void (*f)(int))
+int	ft_count_if(char **tab, int length, int (*f)(char*))
 {
 	int	i;
+	int	count;
 
+	count = 0;
 	i = -1;
 	while (++i < length)
-		(*f)(tab[i]);
+	{
+		if ((*f)(tab[i]))
+			count++;
+	}
+	return (count);
 }
 
 /* 
-#include <stdio.h>
-void	ft_mult(int i)
+int ft_alpha(char *str)
 {
-	printf("%d\n", i * 2);
+	if (str[0] >= 'a' && str[0] <= 'z')
+		return (1);
+	return (0);
 }
 
-int	main(void)
+#include <stdio.h>
+int main(void)
 {
-	int tab[] = { 1, 2, 3, 4, 5};
-	void (*f)(int) = &ft_mult;
+	char *tab[] = {"word", "Word", "123", "alpha", ""};
+	int length = 5;
+	int (*f)(char *) = &ft_alpha;
 
-	ft_foreach(tab, 5, *f);
+	printf("%d\n", ft_count_if(tab, length, (*f)));
+	return (0);
 }
  */

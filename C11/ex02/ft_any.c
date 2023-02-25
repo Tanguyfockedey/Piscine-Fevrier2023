@@ -6,11 +6,11 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:49:09 by tafocked          #+#    #+#             */
-/*   Updated: 2023/02/23 20:35:25 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/02/25 12:57:40 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_any(char **tab, int(*f)(char*))
+int	ft_any(char **tab, int (*f)(char*))
 {
 	int	result;
 	int	i;
