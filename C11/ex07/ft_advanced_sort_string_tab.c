@@ -6,11 +6,11 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 15:19:16 by tafocked          #+#    #+#             */
-/*   Updated: 2023/02/25 15:25:25 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/02/26 12:51:10 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_advanced_sort_string_tab(char **tab, int(*cmp)(char *, char *))
+void	ft_advanced_sort_string_tab(char **tab, int (*cmp)(char *, char *))
 {
 	int		i;
 	int		j;
