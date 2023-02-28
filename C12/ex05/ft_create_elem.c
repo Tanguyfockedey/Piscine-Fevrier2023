@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_create_elem.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/26 13:10:25 by tafocked          #+#    #+#             */
-/*   Updated: 2023/02/28 13:03:33 by tafocked         ###   ########.fr       */
+/*   Created: 2023/02/26 13:15:01 by tafocked          #+#    #+#             */
+/*   Updated: 2023/02/26 13:29:17 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H 
-# include <stdlib.h>
+#include "ft_list.h"
 
-typedef struct s_list
+t_list	*ft_create_elem(void *data)
 {
-	struct s_list	*next;
-	void			*data;
-}	t_list;
+	t_list	*cell;
 
-t_list	*ft_create_elem(void *data);
-void	ft_list_push_front(t_list **begin_list, void *data);
+	cell = malloc(sizeof(t_list));
+	if (!cell)
+		return (0);
+	cell->next = 0;
+	cell->data = data;
+	return (cell);
+}
 
-#endif
+/* 
+#include <stdio.h>
+int main(void)
+{
+	char *str = "This is a string !";
+	t_list *cell;
+
+	cell = ft_create_elem(str);
+	printf("data = %s\nnext = %p\n", cell->data, cell->next);
+}
+ */

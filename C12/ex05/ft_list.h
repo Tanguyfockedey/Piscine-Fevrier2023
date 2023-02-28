@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 13:10:25 by tafocked          #+#    #+#             */
-/*   Updated: 2023/02/28 13:03:33 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/02/28 14:10:36 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,8 @@ typedef struct s_list
 
 t_list	*ft_create_elem(void *data);
 void	ft_list_push_front(t_list **begin_list, void *data);
+void	ft_list_push_back(t_list **begin_list, void *data);
+int		ft_list_size(t_list *begin_list);
+t_list	*ft_list_last(t_list *begin_list);
 
 #endif

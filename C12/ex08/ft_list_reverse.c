@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_list_reverse.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/26 13:10:25 by tafocked          #+#    #+#             */
-/*   Updated: 2023/02/28 13:03:33 by tafocked         ###   ########.fr       */
+/*   Created: 2023/02/28 21:58:27 by tafocked          #+#    #+#             */
+/*   Updated: 2023/02/28 22:06:38 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H 
-# include <stdlib.h>
+#include "ft_list.h"
 
-typedef struct s_list
+void ft_list_reverse(t_list **begin_list)
 {
-	struct s_list	*next;
-	void			*data;
-}	t_list;
+	if ()
+}
 
-t_list	*ft_create_elem(void *data);
-void	ft_list_push_front(t_list **begin_list, void *data);
 
-#endif
+#include <stdio.h>
+int main(void)
+{
+	t_list *list;
+	t_list *start;
+	char *strs[] = {"0", "1", "2", "3", "4"};
+
+	list = ft_list_push_strs(5, strs);
+	start = list;
+	while (start)
+	{
+		printf("%s -> ", start->data);
+		start = start->next;
+	}
+
+}
