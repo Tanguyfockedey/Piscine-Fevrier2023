@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:29:32 by tafocked          #+#    #+#             */
-/*   Updated: 2023/02/26 16:19:01 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/02/28 12:10:55 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_is_sort(int *tab, int length, int (*f)(int, int))
 	return (1);
 }
 
-
+/* 
 int ft_is_smaller(int a, int b)
 {
 	return (a - b);
@@ -42,11 +42,10 @@ int ft_is_smaller(int a, int b)
 #include <stdio.h>
 int main(void)
 {
-	int tab[] = {0, 0, 1, 2};
-	int length = 4;
+	int tab[] = {0,0,3,0};
+	int length = 1;
 	int (*f)(int, int) = &ft_is_smaller;
 
 	printf("%d\n", ft_is_sort(tab, length, (*f)));
 }
-
-//seems ok, to be further tested
+ */
